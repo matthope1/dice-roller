@@ -11,3 +11,36 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+i {
+  color: purple;
+}
+
+.Die {
+  margin: 0 auto;
+  display: inline-block;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+}
+
+.dice-container {
+  width: 50%;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.dice-animation {
+  animation-name: move;
+  animation-duration: 2s;
+}
+
+/* animations */
+@keyframes move {
+  from { background-color: black};
+  to { background-color: red};
+}
+
+
