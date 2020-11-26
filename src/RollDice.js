@@ -38,11 +38,12 @@ class RollDice extends Component {
         const dieArr = [];
         const isRolling = this.state.rolling;
         this.state.dice.forEach(die => dieArr.push(<Die roll={die} rolling={isRolling} />))
+        const btnText = (isRolling ? "Rolling...": "Roll");
 
         return(
             <div className="dice-container">
                 {dieArr}
-                <button onClick={this.roll} disabled={isRolling}>Roll</button>
+                <button onClick={this.roll} disabled={isRolling}>{btnText}</button>
             </div>
         )
     }
