@@ -39,8 +39,8 @@ button {
 
 /* animations */
 @keyframes move {
-  from {font-size: 100px;} 
-  to {font-size: 200px;}
+  from {color: red;}
+  to {color: purple;}
 }
 
 

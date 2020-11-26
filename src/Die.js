@@ -6,17 +6,15 @@ class Die extends Component{
     }
 
     render() {
-        // let cName= `fas fa-dice-one fa-5x`;
         let cName = `fas fa-dice-${this.props.faces[this.props.roll]} fa-5x`;
         
         if (this.props.rolling)  {
-            cName = cName + "move";
+            cName = cName + " dice-animation";
         }
 
         return(
             <div className="Die">
                 <i className={cName}></i>
-                {/* <h1>{this.props.faces}</h1> */}
             </div>
         )
     }

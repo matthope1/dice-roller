@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import Die from './Die'
 
 class RollDice extends Component {
@@ -15,17 +14,17 @@ class RollDice extends Component {
     }
 
     getRandomNum() {
+        // returns random num from 0 - 5
         return Math.floor(Math.random() * 6);
     }
 
     roll() {
-        // generate random numbers for both dice
+        // generate random numbers for all dice
         let newDiceArr = this.state.dice.map(this.getRandomNum);
         this.setState({
             dice: newDiceArr,
             rolling: true
         })
-
         setTimeout(this.rollCompleted,1000);
     }
 
@@ -36,18 +35,15 @@ class RollDice extends Component {
     }
 
     render() {
-        // TODO: rename items
-        const items = [];
-
+        const dieArr = [];
         const isRolling = this.state.rolling;
-        this.state.dice.forEach(item => items.push(<Die roll={item} rolling={isRolling} />))
+        this.state.dice.forEach(die => dieArr.push(<Die roll={die} rolling={isRolling} />))
 
         return(
             <div className="dice-container">
-                {items}
+                {dieArr}
                 <button onClick={this.roll} disabled={isRolling}>Roll</button>
             </div>
-
         )
     }
 }
